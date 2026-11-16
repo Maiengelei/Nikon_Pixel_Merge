@@ -22,6 +22,24 @@ static NSStackView *stack(NSArray<NSView *> *views, bool vertical, CGFloat gap) 
     s.spacing = gap;
     return s;
 }
+
+@interface MergeProgressIndicator : NSProgressIndicator
+@end
+@implementation MergeProgressIndicator
+- (void)drawRect:(NSRect)dirtyRect {
+    if (self.indeterminate || self.doubleValue > self.minValue) {
+        [super drawRect:dirtyRect];
+        return;
+    }
+    // The standard determinate bar paints a short end cap even at zero.
+    NSRect bounds = self.bounds;
+    CGFloat height = MIN(8, NSHeight(bounds));
+    NSRect track = NSMakeRect(NSMinX(bounds), NSMidY(bounds) - height / 2, NSWidth(bounds), height);
+    [NSColor.quaternaryLabelColor setFill];
+    [[NSBezierPath bezierPathWithRoundedRect:track xRadius:height / 2 yRadius:height / 2] fill];
+}
+@end
+
 @interface Studio : NSObject <NSApplicationDelegate, NSTableViewDataSource, NSTableViewDelegate, NSWindowDelegate>
 @end
 @implementation Studio {
@@ -85,9 +103,10 @@ static NSStackView *stack(NSArray<NSView *> *views, bool vertical, CGFloat gap) 
     _details.textColor = NSColor.secondaryLabelColor;
     _ca=[NSButton checkboxWithTitle:@"色差矫正" target:self action:@selector(selectionUpdated:)];
     _ca.state=NSControlStateValueOn;
-    _progress=[[NSProgressIndicator alloc] init];
+    _progress=[[MergeProgressIndicator alloc] init];
     _progress.indeterminate=NO; _progress.minValue=0; _progress.maxValue=1;
     _progress.style=NSProgressIndicatorStyleBar;
+    _progress.doubleValue=0;
     _status=label(@"等待选择文件夹",12,NSFontWeightRegular);
     _status.textColor=NSColor.secondaryLabelColor;
     _start=[self button:@"合并并保存…" action:@selector(save:)];
@@ -178,8 +197,16 @@ static NSStackView *stack(NSArray<NSView *> *views, bool vertical, CGFloat gap) 
     cell.toolTip=cell.stringValue;
     return cell;
 }
-- (void)tableViewSelectionDidChange:(NSNotification*)note { (void)note; [self refresh]; }
-- (void)selectionUpdated:(id)sender { (void)sender; [self refresh]; }
+- (void)tableViewSelectionDidChange:(NSNotification*)note { [self selectionUpdated:note]; }
+- (void)selectionUpdated:(id)sender {
+    (void)sender;
+    if (!_busy && _lastFile) {
+        _progress.doubleValue=0;
+        _lastFile=nil; _reveal.hidden=YES;
+        _status.stringValue=_table.selectedRow >= 0 ? @"等待合并" : @"请选择拍摄序列";
+    }
+    [self refresh];
+}
 - (void)refresh {
     const auto row=_table.selectedRow;
     bool selected=row>=0 && (size_t)row<_scan.groups.size();
@@ -213,6 +240,7 @@ static NSStackView *stack(NSArray<NSView *> *views, bool vertical, CGFloat gap) 
             dispatch_async(dispatch_get_main_queue(), ^{
                 self->_scan=std::move(*next); [self->_thumbnails removeAllObjects]; self->_busy=false;
                 [self->_progress stopAnimation:nil]; self->_progress.indeterminate=NO;
+                self->_progress.doubleValue=0;
                 self->_count.stringValue=[NSString stringWithFormat:@"拍摄序列（%zu）",self->_scan.groups.size()];
                 self->_issues.hidden=self->_scan.issues.empty();
                 [self->_table reloadData];
