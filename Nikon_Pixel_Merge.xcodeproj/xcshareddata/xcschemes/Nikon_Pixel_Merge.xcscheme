@@ -3,19 +3,19 @@
   <BuildAction parallelizeBuildables="YES" buildImplicitDependencies="YES">
     <BuildActionEntries>
       <BuildActionEntry buildForTesting="YES" buildForRunning="YES" buildForProfiling="YES" buildForArchiving="YES" buildForAnalyzing="YES">
-        <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="E7A3CDEFEB9193C848ACCD43" BuildableName="Nikon Pixel Merge.app" BlueprintName="Nikon Pixel Merge" ReferencedContainer="container:Nikon Pixel Merge.xcodeproj" />
+        <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="E7A3CDEFEB9193C848ACCD43" BuildableName="Nikon_Pixel_Merge.app" BlueprintName="Nikon_Pixel_Merge" ReferencedContainer="container:Nikon_Pixel_Merge.xcodeproj" />
       </BuildActionEntry>
     </BuildActionEntries>
   </BuildAction>
   <TestAction buildConfiguration="Debug" />
   <LaunchAction buildConfiguration="Debug" selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB" selectedLauncherIdentifier="Xcode.DebuggerFoundation.Launcher.LLDB" launchStyle="0">
     <BuildableProductRunnable runnableDebuggingMode="0">
-      <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="E7A3CDEFEB9193C848ACCD43" BuildableName="Nikon Pixel Merge.app" BlueprintName="Nikon Pixel Merge" ReferencedContainer="container:Nikon Pixel Merge.xcodeproj" />
+      <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="E7A3CDEFEB9193C848ACCD43" BuildableName="Nikon_Pixel_Merge.app" BlueprintName="Nikon_Pixel_Merge" ReferencedContainer="container:Nikon_Pixel_Merge.xcodeproj" />
     </BuildableProductRunnable>
   </LaunchAction>
   <ProfileAction buildConfiguration="Release">
     <BuildableProductRunnable runnableDebuggingMode="0">
-      <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="E7A3CDEFEB9193C848ACCD43" BuildableName="Nikon Pixel Merge.app" BlueprintName="Nikon Pixel Merge" ReferencedContainer="container:Nikon Pixel Merge.xcodeproj" />
+      <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="E7A3CDEFEB9193C848ACCD43" BuildableName="Nikon_Pixel_Merge.app" BlueprintName="Nikon_Pixel_Merge" ReferencedContainer="container:Nikon_Pixel_Merge.xcodeproj" />
     </BuildableProductRunnable>
   </ProfileAction>
   <AnalyzeAction buildConfiguration="Debug" />

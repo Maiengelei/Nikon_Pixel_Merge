@@ -11,7 +11,7 @@ Mac 应用与命令行工具 `nikon-merge` 将 Nikon Z 8 的像素位移序列�
 
 ## 构建
 
-目标平台为搭载 Apple 芯片、运行 macOS 13 或更新版本的 Mac。在 Xcode 打开 `Nikon Pixel Merge.xcodeproj`，选择 `Nikon Pixel Merge` Scheme 和 `My Mac`，按 `⌘R` 运行。
+目标平台为搭载 Apple 芯片、运行 macOS 13 或更新版本的 Mac。在 Xcode 打开 `Nikon_Pixel_Merge.xcodeproj`，选择 `Nikon_Pixel_Merge` Scheme 和 `My Mac`，按 `⌘R` 运行。
 
 命令行构建使用 Apple Command Line Tools，以下命令在仓库根目录执行。
 

@@ -105,11 +105,11 @@
 			path = System/Library/Frameworks/UniformTypeIdentifiers.framework;
 			sourceTree = SDKROOT;
 		};
-		A8792157CB4F27FB949C035F /* Nikon Pixel Merge.app */ = {
+		A8792157CB4F27FB949C035F /* Nikon_Pixel_Merge.app */ = {
 			isa = PBXFileReference;
 			explicitFileType = wrapper.application;
 			includeInIndex = 0;
-			path = "Nikon Pixel Merge.app";
+			path = "Nikon_Pixel_Merge.app";
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXFileReference section */
@@ -191,7 +191,7 @@
 		4EDC8BFAFC6BD936B849F38C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A8792157CB4F27FB949C035F /* Nikon Pixel Merge.app */,
+				A8792157CB4F27FB949C035F /* Nikon_Pixel_Merge.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -282,11 +282,11 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				ENABLE_HARDENED_RUNTIME = YES;
-				EXECUTABLE_NAME = NikonPixelMerge;
+				EXECUTABLE_NAME = "$(PRODUCT_NAME)";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/src";
 				INFOPLIST_FILE = app/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = local.camera-tools.NikonPixelMerge;
-				PRODUCT_NAME = "Nikon Pixel Merge";
+				PRODUCT_NAME = "Nikon_Pixel_Merge";
 			};
 			name = Debug;
 		};
@@ -295,11 +295,11 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				ENABLE_HARDENED_RUNTIME = YES;
-				EXECUTABLE_NAME = NikonPixelMerge;
+				EXECUTABLE_NAME = "$(PRODUCT_NAME)";
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/src";
 				INFOPLIST_FILE = app/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = local.camera-tools.NikonPixelMerge;
-				PRODUCT_NAME = "Nikon Pixel Merge";
+				PRODUCT_NAME = "Nikon_Pixel_Merge";
 			};
 			name = Release;
 		};
@@ -327,7 +327,7 @@
 /* End XCConfigurationList section */
 
 /* Begin PBXNativeTarget section */
-		E7A3CDEFEB9193C848ACCD43 /* Nikon Pixel Merge */ = {
+		E7A3CDEFEB9193C848ACCD43 /* Nikon_Pixel_Merge */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40DE70BADB4CE70CE0807E4F /* appTargetconfig */;
 			buildPhases = (
@@ -337,9 +337,9 @@
 			);
 			buildRules = ();
 			dependencies = ();
-			name = "Nikon Pixel Merge";
-			productName = "Nikon Pixel Merge";
-			productReference = A8792157CB4F27FB949C035F /* Nikon Pixel Merge.app */;
+			name = "Nikon_Pixel_Merge";
+			productName = "Nikon_Pixel_Merge";
+			productReference = A8792157CB4F27FB949C035F /* Nikon_Pixel_Merge.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -357,7 +357,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E7A3CDEFEB9193C848ACCD43 /* Nikon Pixel Merge */,
+				E7A3CDEFEB9193C848ACCD43 /* Nikon_Pixel_Merge */,
 			);
 		};
 /* End PBXProject section */
