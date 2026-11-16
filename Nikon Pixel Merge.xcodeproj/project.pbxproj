@@ -1,0 +1,361 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXFileReference section */
+		123AF5E120783C29EC1DD545 /* App.mm */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.objcpp;
+			path = App.mm;
+			sourceTree = "<group>";
+		};
+		7375B9DB9100A10956BFA36F /* Info.plist */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.xml;
+			path = Info.plist;
+			sourceTree = "<group>";
+		};
+		6CE1FC1181DA371FF314CA54 /* groups.cpp */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = groups.cpp;
+			sourceTree = "<group>";
+		};
+		35DA424214651695AA4888AF /* groups.hpp */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.h;
+			path = groups.hpp;
+			sourceTree = "<group>";
+		};
+		D6CECC3A799EB6EF01323CB3 /* job.cpp */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = job.cpp;
+			sourceTree = "<group>";
+		};
+		16B281C2234D962A797218FF /* job.hpp */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.h;
+			path = job.hpp;
+			sourceTree = "<group>";
+		};
+		E0EA236CEC6E6728EB12BB68 /* merge.cpp */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = merge.cpp;
+			sourceTree = "<group>";
+		};
+		2EA7ADD8C8451425D5035F13 /* merge.hpp */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.h;
+			path = merge.hpp;
+			sourceTree = "<group>";
+		};
+		7CBDB62A21466225E41ACEC0 /* output.cpp */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = output.cpp;
+			sourceTree = "<group>";
+		};
+		4AA8CAAF68C7998AED9A0633 /* output.hpp */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.h;
+			path = output.hpp;
+			sourceTree = "<group>";
+		};
+		4D8DD5526906477D1DDFBC6E /* pdaf.hpp */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.h;
+			path = pdaf.hpp;
+			sourceTree = "<group>";
+		};
+		2CF53D19B073572EF412AE6E /* raw.cpp */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = raw.cpp;
+			sourceTree = "<group>";
+		};
+		B75019DA91BE33240C36DA7C /* raw.hpp */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.h;
+			path = raw.hpp;
+			sourceTree = "<group>";
+		};
+		F253D941A32BA0D7755830B4 /* raw_tiff.hpp */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.h;
+			path = raw_tiff.hpp;
+			sourceTree = "<group>";
+		};
+		91704536602ACE791028AA8E /* AppKit.framework */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = AppKit.framework;
+			path = System/Library/Frameworks/AppKit.framework;
+			sourceTree = SDKROOT;
+		};
+		C04DC457921DECC8CC51B655 /* UniformTypeIdentifiers.framework */ = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = UniformTypeIdentifiers.framework;
+			path = System/Library/Frameworks/UniformTypeIdentifiers.framework;
+			sourceTree = SDKROOT;
+		};
+		A8792157CB4F27FB949C035F /* Nikon Pixel Merge.app */ = {
+			isa = PBXFileReference;
+			explicitFileType = wrapper.application;
+			includeInIndex = 0;
+			path = "Nikon Pixel Merge.app";
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXFileReference section */
+
+/* Begin PBXBuildFile section */
+		28D522F1CC2E1D69B03F7AD7 /* App.mm in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 123AF5E120783C29EC1DD545 /* App.mm */;
+		};
+		EC6BE54B3EE8B264053DA99B /* groups.cpp in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 6CE1FC1181DA371FF314CA54 /* groups.cpp */;
+		};
+		0221FF0961935C053247ED0F /* job.cpp in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = D6CECC3A799EB6EF01323CB3 /* job.cpp */;
+		};
+		94CC43AAB18A38884DBF8288 /* merge.cpp in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = E0EA236CEC6E6728EB12BB68 /* merge.cpp */;
+		};
+		720A81A597B3DA564C6EB8C2 /* output.cpp in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 7CBDB62A21466225E41ACEC0 /* output.cpp */;
+		};
+		A7BB698DA1919259167EE441 /* raw.cpp in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 2CF53D19B073572EF412AE6E /* raw.cpp */;
+		};
+		38277D7792E6F8DEA930F037 /* AppKit.framework in Frameworks */ = {
+			isa = PBXBuildFile;
+			fileRef = 91704536602ACE791028AA8E /* AppKit.framework */;
+		};
+		FE86E9CC41FA4A9D967F872D /* UniformTypeIdentifiers.framework in Frameworks */ = {
+			isa = PBXBuildFile;
+			fileRef = C04DC457921DECC8CC51B655 /* UniformTypeIdentifiers.framework */;
+		};
+/* End PBXBuildFile section */
+
+/* Begin PBXGroup section */
+		A172CEDCAE47474B615C54D5 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				123AF5E120783C29EC1DD545 /* App.mm */,
+				7375B9DB9100A10956BFA36F /* Info.plist */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		25A6634263C1B1F6FC4697A0 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				6CE1FC1181DA371FF314CA54 /* groups.cpp */,
+				35DA424214651695AA4888AF /* groups.hpp */,
+				D6CECC3A799EB6EF01323CB3 /* job.cpp */,
+				16B281C2234D962A797218FF /* job.hpp */,
+				E0EA236CEC6E6728EB12BB68 /* merge.cpp */,
+				2EA7ADD8C8451425D5035F13 /* merge.hpp */,
+				7CBDB62A21466225E41ACEC0 /* output.cpp */,
+				4AA8CAAF68C7998AED9A0633 /* output.hpp */,
+				4D8DD5526906477D1DDFBC6E /* pdaf.hpp */,
+				2CF53D19B073572EF412AE6E /* raw.cpp */,
+				B75019DA91BE33240C36DA7C /* raw.hpp */,
+				F253D941A32BA0D7755830B4 /* raw_tiff.hpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		CAFD6B725820BD8EFB592E21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91704536602ACE791028AA8E /* AppKit.framework */,
+				C04DC457921DECC8CC51B655 /* UniformTypeIdentifiers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4EDC8BFAFC6BD936B849F38C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A8792157CB4F27FB949C035F /* Nikon Pixel Merge.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4813494D137E1631BBA301D5 /* root */ = {
+			isa = PBXGroup;
+			children = (
+				A172CEDCAE47474B615C54D5 /* app */,
+				25A6634263C1B1F6FC4697A0 /* src */,
+				CAFD6B725820BD8EFB592E21 /* Frameworks */,
+				4EDC8BFAFC6BD936B849F38C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CAF85B0888D78F1F83771A07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28D522F1CC2E1D69B03F7AD7 /* App.mm in Sources */,
+				EC6BE54B3EE8B264053DA99B /* groups.cpp in Sources */,
+				0221FF0961935C053247ED0F /* job.cpp in Sources */,
+				94CC43AAB18A38884DBF8288 /* merge.cpp in Sources */,
+				720A81A597B3DA564C6EB8C2 /* output.cpp in Sources */,
+				A7BB698DA1919259167EE441 /* raw.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB7B51F72D7B627B8CA21F56 /* Frameworks-phase */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38277D7792E6F8DEA930F037 /* AppKit.framework in Frameworks */,
+				FE86E9CC41FA4A9D967F872D /* UniformTypeIdentifiers.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E89B30AA1DC30A6AD8C34610 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		73EBF6644258C120893E685D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0B0C687DF8B6B8DC790B519C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4E182047617830BB26D0D028 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				EXECUTABLE_NAME = NikonPixelMerge;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/src";
+				INFOPLIST_FILE = app/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = local.camera-tools.NikonPixelMerge;
+				PRODUCT_NAME = "Nikon Pixel Merge";
+			};
+			name = Debug;
+		};
+		2015CB5D8F7B43B4158889CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				EXECUTABLE_NAME = NikonPixelMerge;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/src";
+				INFOPLIST_FILE = app/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = local.camera-tools.NikonPixelMerge;
+				PRODUCT_NAME = "Nikon Pixel Merge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A964DD4136F390AFDF0E5FBA /* projectconfig */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73EBF6644258C120893E685D /* Debug */,
+				0B0C687DF8B6B8DC790B519C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40DE70BADB4CE70CE0807E4F /* appTargetconfig */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E182047617830BB26D0D028 /* Debug */,
+				2015CB5D8F7B43B4158889CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin PBXNativeTarget section */
+		E7A3CDEFEB9193C848ACCD43 /* Nikon Pixel Merge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40DE70BADB4CE70CE0807E4F /* appTargetconfig */;
+			buildPhases = (
+				CAF85B0888D78F1F83771A07 /* Sources */,
+				EB7B51F72D7B627B8CA21F56 /* Frameworks-phase */,
+				E89B30AA1DC30A6AD8C34610 /* Resources */,
+			);
+			buildRules = ();
+			dependencies = ();
+			name = "Nikon Pixel Merge";
+			productName = "Nikon Pixel Merge";
+			productReference = A8792157CB4F27FB949C035F /* Nikon Pixel Merge.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8F9CF3BDABFFBFD707FE0037 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = A964DD4136F390AFDF0E5FBA /* projectconfig */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = zh_CN;
+			hasScannedForEncodings = 0;
+			knownRegions = (zh_CN, en, Base);
+			mainGroup = 4813494D137E1631BBA301D5 /* root */;
+			productRefGroup = 4EDC8BFAFC6BD936B849F38C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E7A3CDEFEB9193C848ACCD43 /* Nikon Pixel Merge */,
+			);
+		};
+/* End PBXProject section */
+
+	};
+	rootObject = 8F9CF3BDABFFBFD707FE0037 /* Project object */;
+}
