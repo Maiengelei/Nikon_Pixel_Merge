@@ -1,0 +1,7 @@
+/build/
+/ImageFile/
+/exports/
+/DerivedData/
+xcuserdata/
+*.xcuserstate
+.DS_Store
