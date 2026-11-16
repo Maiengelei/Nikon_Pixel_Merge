@@ -6,6 +6,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		A20C00000000000000000001 /* AppIcon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = Resources/AppIcon.iconset; sourceTree = "<group>"; };
 		123AF5E120783C29EC1DD545 /* App.mm */ = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.objcpp;
@@ -114,6 +115,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXBuildFile section */
+		A20C00000000000000000002 /* AppIcon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = A20C00000000000000000001 /* AppIcon.iconset */; };
 		28D522F1CC2E1D69B03F7AD7 /* App.mm in Sources */ = {
 			isa = PBXBuildFile;
 			fileRef = 123AF5E120783C29EC1DD545 /* App.mm */;
@@ -197,6 +199,7 @@
 		4813494D137E1631BBA301D5 /* root */ = {
 			isa = PBXGroup;
 			children = (
+				A20C00000000000000000001 /* AppIcon.iconset */,
 				A172CEDCAE47474B615C54D5 /* app */,
 				25A6634263C1B1F6FC4697A0 /* src */,
 				CAFD6B725820BD8EFB592E21 /* Frameworks */,
@@ -239,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A20C00000000000000000002 /* AppIcon.iconset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +281,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				ENABLE_HARDENED_RUNTIME = YES;
 				EXECUTABLE_NAME = NikonPixelMerge;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/src";
 				INFOPLIST_FILE = app/Info.plist;
@@ -289,6 +294,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
+				ENABLE_HARDENED_RUNTIME = YES;
 				EXECUTABLE_NAME = NikonPixelMerge;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/src";
 				INFOPLIST_FILE = app/Info.plist;

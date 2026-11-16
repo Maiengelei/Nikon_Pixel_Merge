@@ -7,7 +7,7 @@ CORE := $(addprefix $(BUILD)/,groups.o raw.o merge.o output.o job.o)
 APP := $(BUILD)/Nikon\ Pixel\ Merge.app/Contents
 .PHONY: all app test clean
 all: $(BUILD)/nikon-merge app
-app: $(APP)/MacOS/NikonPixelMerge $(APP)/Info.plist
+app: $(APP)/MacOS/NikonPixelMerge $(APP)/Info.plist $(APP)/Resources/AppIcon.icns
 $(BUILD):
 	mkdir -p "$@"
 $(BUILD)/%.o: src/%.cpp Makefile | $(BUILD)
@@ -22,6 +22,9 @@ $(APP)/MacOS/NikonPixelMerge: $(CORE) $(BUILD)/App.o
 $(APP)/Info.plist: app/Info.plist
 	mkdir -p "$(BUILD)/Nikon Pixel Merge.app/Contents"
 	cp "$<" "$@"
+$(APP)/Resources/AppIcon.icns: $(wildcard Resources/AppIcon.iconset/*.png)
+	mkdir -p "$(BUILD)/Nikon Pixel Merge.app/Contents/Resources"
+	iconutil -c icns Resources/AppIcon.iconset -o "$@"
 $(BUILD)/compare: tools/compare.cpp | $(BUILD)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) "$<" -o "$@"
 clean:
@@ -39,6 +42,6 @@ test: all $(BUILD)/groups-test $(BUILD)/merge-test $(BUILD)/compare
 # Standalone local distribution. Ad-hoc signing requires no developer account.
 .PHONY: package
 package: app
-	codesign --force --sign - "$(BUILD)/Nikon Pixel Merge.app"
+	codesign --force --options runtime --sign - "$(BUILD)/Nikon Pixel Merge.app"
 	codesign --verify --strict "$(BUILD)/Nikon Pixel Merge.app"
 	ditto -c -k --sequesterRsrc --keepParent "$(BUILD)/Nikon Pixel Merge.app" "$(BUILD)/Nikon-Pixel-Merge-macOS.zip"
