@@ -75,7 +75,8 @@ std::string group_problem(const Group& g) {
 std::string suggested_filename(const Group& g,bool ca) {
     return g.frames.front().path.stem().string()+"_"+std::to_string(g.expected)+(ca?"f_CA":"f")+".nefx";
 }
-void export_group(const Group& g,const fs::path& destination,bool ca,const Progress& progress) {
+void export_group(const Group& g,const fs::path& destination,bool ca,const Progress& progress,
+                  const ExportLimits& limits) {
     auto announce=[&](double pct,const std::string& s){if(progress) progress(pct,s);};
     auto problem=group_problem(g);
     if(!problem.empty()) throw std::invalid_argument(problem);
@@ -112,11 +113,12 @@ void export_group(const Group& g,const fs::path& destination,bool ca,const Progr
     // Decode separate predictor streams in parallel while bounding the number of resident RAW planes.
     std::deque<std::future<RawPlane>> pending;
     int scheduled=0,consumed=0;
-    size_t depth=std::clamp(std::thread::hardware_concurrency(),1u,3u);
+    const size_t depth=std::clamp(limits.prefetch,1u,std::clamp(std::thread::hardware_concurrency(),1u,3u));
+    const auto launch=limits.prefetch ? std::launch::async : std::launch::deferred;
     auto fill=[&](){
         while(pending.size()<depth && scheduled<g.expected) {
             auto path=g.frames[scheduled++].path;
-            pending.emplace_back(std::async(std::launch::async,[path]{return read_nef(path);}));
+            pending.emplace_back(std::async(launch,[path]{return read_nef(path);}));
         }
     };
     fill();
@@ -129,7 +131,7 @@ void export_group(const Group& g,const fs::path& destination,bool ca,const Progr
         if(width!=w || y<0 || y>=h) throw std::logic_error("输出尺寸不一致");
         if(y%96==0) announce(.70+.29*y/h,ca?"正在校正色差并写入合并图…":"正在写入合并图…");
         writer.row(rgb);
-    });
+    },limits.row_workers);
     writer.finish(); announce(.999,"正在保存文件…");
     tmp.publish(dest);
 }

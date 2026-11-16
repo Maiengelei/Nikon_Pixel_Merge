@@ -1,6 +1,7 @@
 #pragma once
 
 #include <filesystem>
+#include <functional>
 #include <optional>
 #include <string>
 #include <vector>
@@ -43,5 +44,6 @@ struct ScanResult {
 std::optional<FrameInfo> inspect_frame(const std::filesystem::path& path);
 // Inputs may be folders (recursive, no symlinked subfolders) or individual files.
 // .nef is case-insensitive. Groups and frames have deterministic order.
-ScanResult scan_groups(const std::vector<std::filesystem::path>& inputs);
+ScanResult scan_groups(const std::vector<std::filesystem::path>& inputs,
+                       const std::function<void()>& checkpoint = {});
 } // namespace npm

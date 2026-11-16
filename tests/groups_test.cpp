@@ -103,6 +103,11 @@ int main(int argc,char**argv) {
     std::ofstream(d/"reference.NEFX") << "ignore";
     auto scan=npm::scan_groups({d,sub,d/"photo-8.nEf"});
     require(scan.groups.size()==2 && scan.ordinary_nefs==1 && scan.issues.size()==1,"mixed scans");
+    struct StopScan {};
+    bool stopped=false;
+    try { npm::scan_groups({d/"photo-8.nEf"},[]{throw StopScan{};}); }
+    catch (const StopScan&) { stopped=true; }
+    require(stopped,"cancelled file scan must stop before parsing");
     std::map<int,std::string> ids;
     for(auto& g:scan.groups) {
         require(g.complete(),"complete mixed group");

@@ -14,5 +14,6 @@ CAProfile read_ca_profile(const std::filesystem::path& nef);
 // Only 16/32-frame captures double the width and height of the active crop.
 void merge(int frame_count, MergeGeometry geometry, const CAProfile* correction,
            std::function<std::vector<uint16_t>(int)> read_raw,
-           std::function<void(int,const uint16_t*,int)> write_row);
+           std::function<void(int,const uint16_t*,int)> write_row,
+           const std::function<unsigned()>& row_workers = {});
 }

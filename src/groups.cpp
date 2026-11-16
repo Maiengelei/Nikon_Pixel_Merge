@@ -202,7 +202,7 @@ std::optional<FrameInfo> inspect_frame(const std::filesystem::path& path) {
     return info;
 }
 
-ScanResult scan_groups(const std::vector<std::filesystem::path>& inputs) {
+ScanResult scan_groups(const std::vector<std::filesystem::path>& inputs, const std::function<void()>& checkpoint) {
     ScanResult out;
     std::set<fs::path> files;
     auto add = [&](const fs::path& p) {
@@ -220,6 +220,7 @@ ScanResult scan_groups(const std::vector<std::filesystem::path>& inputs) {
         fs::recursive_directory_iterator it(p,ec), end;
         if (ec) {out.issues.push_back({p,ec.message()}); continue;}
         while (it != end) {
+            if (checkpoint) checkpoint();
             auto entry = it->path();
             if (nef(entry)) {
                 if (it->is_regular_file(ec)) add(entry);
@@ -231,6 +232,7 @@ ScanResult scan_groups(const std::vector<std::filesystem::path>& inputs) {
     }
     std::map<std::string,Group> groups;
     for (auto& p : files) {
+        if (checkpoint) checkpoint();
         try {
             auto info = inspect_frame(p);
             if (!info) {++out.ordinary_nefs; continue;}

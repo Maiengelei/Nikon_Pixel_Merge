@@ -2,24 +2,12 @@
 
 ## 功能
 
-C++17 核心将 Nikon Z 8 的 FX 全尺寸、14 位无损压缩 NEF 像素位移序列合成为一张线性 RGB NEFX。它按相机元数据分组，检查缺帧、重复帧和曝光设置，并支持按镜头配置校正色差。
-
-| 输入帧数 | 输出尺寸 |
-| --- | --- |
-| 4、8 | 8256 × 5504 |
-| 16、32 | 16512 × 11008 |
+iPhone 应用从“文件”读取 Nikon Z 8 的 FX 全尺寸、14 位无损压缩 NEF 像素位移序列，在前台合成并导出一张 NEFX，支持镜头色差校正。4、8 帧输出 8256 × 5504，16、32 帧输出 16512 × 11008。应用按内存余量、热状态和低电量模式调整并发与默认选组，32 帧由用户手动选择并确认。
 
 ## 构建
 
-在 macOS 安装 Apple Command Line Tools 后，从仓库根目录构建静态库。扫描入口为 `npm::scan_groups`，合成入口为 `npm::export_group`。
-
-```sh
-mkdir -p build
-(cd build && c++ -std=c++17 -O2 -pthread -I../src -c ../src/*.cpp && ar rcs libnikon_merge.a groups.o raw.o merge.o output.o job.o)
-```
-
-Mac 应用和命令行程序在 `Nikon_Pixel_Merge_Mac` 分支，iPhone 应用在 `Nikon_Pixel_Merge_IOS` 分支。
+使用 Xcode 16 或更新版本打开 `Nikon Pixel Merge iOS.xcodeproj`，选择 `Nikon Pixel Merge iOS` Scheme。部署目标为 iOS 17 或更新版本。选择 iPhone 模拟器后按 `⌘R` 运行，真机调试需在应用 Target 的 `Signing & Capabilities` 中选择开发团队。
 
 ## 第三方组件
 
-核心仅依赖 C++ 标准库和系统 API。可选校验程序 `tests/libraw_check.cpp` 使用 LibRaw 0.22 或更高版本核对 NEF 和 NEFX 的解码值。
+应用仅使用系统框架和 C++ 标准库。可选校验程序 `tests/libraw_check.cpp` 使用 LibRaw 0.22 或更高版本核对 NEF 和 NEFX 的解码值。

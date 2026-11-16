@@ -1,0 +1,133 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 77;
+	objects = {
+		910000000000000000000001 /* Project */ = {
+			isa = PBXProject;
+			buildConfigurationList = 910000000000000000000010;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = zh_CN;
+			knownRegions = (zh_CN, en, Base);
+			mainGroup = 910000000000000000000002;
+			productRefGroup = 910000000000000000000005;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (910000000000000000000007);
+		};
+		910000000000000000000002 = {
+			isa = PBXGroup;
+			children = (910000000000000000000003, 910000000000000000000004, 910000000000000000000005);
+			sourceTree = "<group>";
+		};
+		910000000000000000000003 /* src */ = {isa = PBXFileSystemSynchronizedRootGroup; path = src; sourceTree = "<group>";};
+		910000000000000000000004 /* ios */ = {isa = PBXFileSystemSynchronizedRootGroup; path = ios; sourceTree = "<group>";};
+		910000000000000000000005 /* Products */ = {
+			isa = PBXGroup;
+			children = (910000000000000000000006);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		910000000000000000000006 /* Nikon Pixel Merge.app */ = {
+			isa = PBXFileReference;
+			explicitFileType = wrapper.application;
+			path = "Nikon Pixel Merge.app";
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		910000000000000000000007 /* Nikon Pixel Merge iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 910000000000000000000013;
+			buildPhases = (910000000000000000000008, 910000000000000000000009, 91000000000000000000000A);
+			buildRules = ();
+			dependencies = ();
+			fileSystemSynchronizedGroups = (910000000000000000000003, 910000000000000000000004);
+			name = "Nikon Pixel Merge iOS";
+			productName = "Nikon Pixel Merge";
+			productReference = 910000000000000000000006;
+			productType = "com.apple.product-type.application";
+		};
+		910000000000000000000008 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;};
+		910000000000000000000009 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;};
+		91000000000000000000000A = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;};
+		910000000000000000000010 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (910000000000000000000011, 910000000000000000000012);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		910000000000000000000011 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				OTHER_LDFLAGS = ("$(inherited)", "-framework", UIKit, "-framework", Foundation, "-framework", UniformTypeIdentifiers);
+				GCC_OPTIMIZATION_LEVEL = 0;
+			};
+			name = Debug;
+		};
+		910000000000000000000012 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				SDKROOT = iphoneos;
+				OTHER_LDFLAGS = ("$(inherited)", "-framework", UIKit, "-framework", Foundation, "-framework", UniformTypeIdentifiers);
+				GCC_OPTIMIZATION_LEVEL = 3;
+			};
+			name = Release;
+		};
+		910000000000000000000013 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (910000000000000000000014, 910000000000000000000015);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		910000000000000000000014 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/src";
+				INFOPLIST_KEY_CFBundleDisplayName = "Nikon Pixel Merge";
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.camera-tools.NikonPixelMerge.ios;
+				PRODUCT_NAME = "Nikon Pixel Merge";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		910000000000000000000015 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/src";
+				INFOPLIST_KEY_CFBundleDisplayName = "Nikon Pixel Merge";
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.camera-tools.NikonPixelMerge.ios;
+				PRODUCT_NAME = "Nikon Pixel Merge";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+	};
+	rootObject = 910000000000000000000001;
+}

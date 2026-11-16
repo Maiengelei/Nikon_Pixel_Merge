@@ -43,8 +43,9 @@ CAProfile read_ca_profile(const std::filesystem::path& nef) {
     return profile;
 }
 namespace {
-template<class F> void parallel_rows(int count,const F& run) {
-    const int n=std::max(1,std::min({8,int(std::thread::hardware_concurrency()),(count+7)/8}));
+template<class F> void parallel_rows(int count,const std::function<unsigned()>& row_workers,const F& run) {
+    const int limit=row_workers ? int(std::clamp(row_workers(),1u,8u)) : 8;
+    const int n=std::max(1,std::min({limit,int(std::thread::hardware_concurrency()),(count+7)/8}));
     std::vector<std::thread> threads;
     try {
         for(int i=1;i<n;i++)
@@ -95,7 +96,8 @@ inline uint16_t sample(const std::vector<uint16_t>& rgb,int w,int h,int c,
 }
 void merge(int n,MergeGeometry g,const CAProfile* correction,
            std::function<std::vector<uint16_t>(int)> read_raw,
-           std::function<void(int,const uint16_t*,int)> write_row) {
+           std::function<void(int,const uint16_t*,int)> write_row,
+           const std::function<unsigned()>& row_workers) {
     tiff::require(n==4||n==8||n==16||n==32,"Unsupported pixel shift frame count");
     const bool repeat=n==8||n==32;
     const int scale=n>=16?2:1, cycle=4*scale*scale;
@@ -124,7 +126,7 @@ void merge(int n,MergeGeometry g,const CAProfile* correction,
         const int sx=g.left-xs[f%4], sy=g.top-ys[f%4]-2*(f/cycle);
         const int px=scale==1?0:xs[(f/4)%4], py=scale==1?0:ys[(f/4)%4];
         const bool second=f>=cycle;
-        parallel_rows(g.height,[&](int first,int last) {
+        parallel_rows(g.height,row_workers,[&](int first,int last) {
             for(int y=first;y<last;y++) {
                 const int ry=sy+y, green_bit=14+(ry&1);
                 const bool bad_first=pdaf_row(ry+2),bad_second=pdaf_row(ry);
@@ -149,7 +151,7 @@ void merge(int n,MergeGeometry g,const CAProfile* correction,
         });
     }
     if(!repeat) correct_pdaf(rgb,w,h,scale,g.top);
-    parallel_rows(h,[&](int first,int last){
+    parallel_rows(h,row_workers,[&](int first,int last){
         for(size_t i=size_t(first)*w*3;i<size_t(last)*w*3;i+=3) {
             rgb[i]&=16383;rgb[i+1]>>=repeat?2:1;
         }
@@ -167,7 +169,7 @@ void merge(int n,MergeGeometry g,const CAProfile* correction,
     std::vector<uint16_t> output(size_t(out_width)*3*band);
     for(int start=0;start<out_height;start+=band) {
         const int rows=std::min(out_height-start,band);
-        parallel_rows(rows,[&](int first,int last){
+        parallel_rows(rows,row_workers,[&](int first,int last){
             for(int j=first;j<last;j++) {
                 const int y=j+start+offset_y;const double v=y-cy;
                 auto* out=output.data()+size_t(j)*out_width*3;
