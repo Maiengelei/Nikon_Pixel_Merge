@@ -85,8 +85,6 @@ static NSStackView *stack(NSArray<NSView *> *views, bool vertical, CGFloat gap) 
     _details.textColor = NSColor.secondaryLabelColor;
     _ca=[NSButton checkboxWithTitle:@"色差矫正" target:self action:@selector(selectionUpdated:)];
     _ca.state=NSControlStateValueOn;
-    auto mode=label(@"输出：一张合并图（NEFX）",13,NSFontWeightRegular);
-    auto options=stack(@[mode,_ca],false,24);
     _progress=[[NSProgressIndicator alloc] init];
     _progress.indeterminate=NO; _progress.minValue=0; _progress.maxValue=1;
     _progress.style=NSProgressIndicatorStyleBar;
@@ -98,7 +96,7 @@ static NSStackView *stack(NSArray<NSView *> *views, bool vertical, CGFloat gap) 
     _reveal=[self button:@"在访达中显示" action:@selector(reveal:)];
     _reveal.hidden=YES; _cancel.hidden=YES;
     auto buttons=stack(@[_start,_cancel,_reveal],false,8);
-    auto main=stack(@[title,importRow,heading,scroll,_details,options,_progress,_status,buttons],true,10);
+    auto main=stack(@[title,importRow,heading,scroll,_details,_ca,_progress,_status,buttons],true,10);
     main.translatesAutoresizingMaskIntoConstraints=NO;
     auto view=_window.contentView; [view addSubview:main];
     [NSLayoutConstraint activateConstraints:@[
