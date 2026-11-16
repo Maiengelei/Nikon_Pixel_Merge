@@ -6,7 +6,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		A20C00000000000000000001 /* AppIcon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = Resources/AppIcon.iconset; sourceTree = "<group>"; };
+		A20C00000000000000000001 /* AppIcon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = AppIcon.iconset; sourceTree = "<group>"; };
 		123AF5E120783C29EC1DD545 /* App.mm */ = {
 			isa = PBXFileReference;
 			lastKnownFileType = sourcecode.cpp.objcpp;
@@ -112,6 +112,16 @@
 			path = "Nikon_Pixel_Merge.app";
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		2DEFCF7A7B581E2E0AAA81BB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B8DA1A88031C0C81B4EEBF84 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		8871A577FB013630ED028B89 /* cli.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = cli.cpp; path = src/cli.cpp; sourceTree = "<group>"; };
+		C58A2A041032850CA5147E2F /* groups_test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = groups_test.cpp; sourceTree = "<group>"; };
+		8E6140457AB46C603C07A0A3 /* job_failures.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = job_failures.py; sourceTree = "<group>"; };
+		9421D6B5ADBADDC70CF4F2E4 /* libraw_check.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = libraw_check.cpp; sourceTree = "<group>"; };
+		E6159A404BEC69FE87C2E08F /* merge_test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = merge_test.cpp; sourceTree = "<group>"; };
+		7831EF2F1816C37386C8ABB2 /* references.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = references.py; sourceTree = "<group>"; };
+		52B9048FEE292023C396A88F /* compare.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = compare.cpp; sourceTree = "<group>"; };
+		CE6AE3A9BD6AF9EECF1D13BD /* compare_display.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = compare_display.py; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXBuildFile section */
@@ -151,32 +161,100 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXGroup section */
-		A172CEDCAE47474B615C54D5 /* app */ = {
+		A172CEDCAE47474B615C54D5 /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				123AF5E120783C29EC1DD545 /* App.mm */,
 				7375B9DB9100A10956BFA36F /* Info.plist */,
 			);
+			name = Application;
 			path = app;
 			sourceTree = "<group>";
 		};
-		25A6634263C1B1F6FC4697A0 /* src */ = {
+		82C1EB61A583AC9063CE5BD0 /* Input */ = {
 			isa = PBXGroup;
 			children = (
-				6CE1FC1181DA371FF314CA54 /* groups.cpp */,
 				35DA424214651695AA4888AF /* groups.hpp */,
-				D6CECC3A799EB6EF01323CB3 /* job.cpp */,
-				16B281C2234D962A797218FF /* job.hpp */,
-				E0EA236CEC6E6728EB12BB68 /* merge.cpp */,
-				2EA7ADD8C8451425D5035F13 /* merge.hpp */,
-				7CBDB62A21466225E41ACEC0 /* output.cpp */,
-				4AA8CAAF68C7998AED9A0633 /* output.hpp */,
-				4D8DD5526906477D1DDFBC6E /* pdaf.hpp */,
-				2CF53D19B073572EF412AE6E /* raw.cpp */,
+				6CE1FC1181DA371FF314CA54 /* groups.cpp */,
 				B75019DA91BE33240C36DA7C /* raw.hpp */,
+				2CF53D19B073572EF412AE6E /* raw.cpp */,
 				F253D941A32BA0D7755830B4 /* raw_tiff.hpp */,
 			);
+			name = Input;
+			sourceTree = "<group>";
+		};
+		E25C64E94AEE9728B262331F /* Merge */ = {
+			isa = PBXGroup;
+			children = (
+				2EA7ADD8C8451425D5035F13 /* merge.hpp */,
+				E0EA236CEC6E6728EB12BB68 /* merge.cpp */,
+				4D8DD5526906477D1DDFBC6E /* pdaf.hpp */,
+			);
+			name = Merge;
+			sourceTree = "<group>";
+		};
+		89810E4F13F5ABA64875D1F0 /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				4AA8CAAF68C7998AED9A0633 /* output.hpp */,
+				7CBDB62A21466225E41ACEC0 /* output.cpp */,
+			);
+			name = Output;
+			sourceTree = "<group>";
+		};
+		25A6634263C1B1F6FC4697A0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				16B281C2234D962A797218FF /* job.hpp */,
+				D6CECC3A799EB6EF01323CB3 /* job.cpp */,
+				82C1EB61A583AC9063CE5BD0 /* Input */,
+				E25C64E94AEE9728B262331F /* Merge */,
+				89810E4F13F5ABA64875D1F0 /* Output */,
+			);
+			name = Core;
 			path = src;
+			sourceTree = "<group>";
+		};
+		506F7BBCF8B7451EF244C38E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A20C00000000000000000001 /* AppIcon.iconset */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A7F4BD9DA21AE4F01252D81F /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C58A2A041032850CA5147E2F /* groups_test.cpp */,
+				8E6140457AB46C603C07A0A3 /* job_failures.py */,
+				9421D6B5ADBADDC70CF4F2E4 /* libraw_check.cpp */,
+				E6159A404BEC69FE87C2E08F /* merge_test.cpp */,
+				7831EF2F1816C37386C8ABB2 /* references.py */,
+			);
+			name = Tests;
+			path = tests;
+			sourceTree = "<group>";
+		};
+		BC611597C3C01C905F497665 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				52B9048FEE292023C396A88F /* compare.cpp */,
+				CE6AE3A9BD6AF9EECF1D13BD /* compare_display.py */,
+			);
+			name = Tools;
+			path = tools;
+			sourceTree = "<group>";
+		};
+		AB4C8271E2D077318236310D /* Development */ = {
+			isa = PBXGroup;
+			children = (
+				B8DA1A88031C0C81B4EEBF84 /* Makefile */,
+				8871A577FB013630ED028B89 /* cli.cpp */,
+				A7F4BD9DA21AE4F01252D81F /* Tests */,
+				BC611597C3C01C905F497665 /* Tools */,
+			);
+			name = Development;
 			sourceTree = "<group>";
 		};
 		CAFD6B725820BD8EFB592E21 /* Frameworks */ = {
@@ -199,9 +277,11 @@
 		4813494D137E1631BBA301D5 /* root */ = {
 			isa = PBXGroup;
 			children = (
-				A20C00000000000000000001 /* AppIcon.iconset */,
-				A172CEDCAE47474B615C54D5 /* app */,
-				25A6634263C1B1F6FC4697A0 /* src */,
+				2DEFCF7A7B581E2E0AAA81BB /* README.md */,
+				A172CEDCAE47474B615C54D5 /* Application */,
+				25A6634263C1B1F6FC4697A0 /* Core */,
+				506F7BBCF8B7451EF244C38E /* Resources */,
+				AB4C8271E2D077318236310D /* Development */,
 				CAFD6B725820BD8EFB592E21 /* Frameworks */,
 				4EDC8BFAFC6BD936B849F38C /* Products */,
 			);
