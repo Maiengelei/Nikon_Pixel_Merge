@@ -18,12 +18,11 @@
 		};
 		910000000000000000000002 = {
 			isa = PBXGroup;
-			children = (910000000000000000000003, 910000000000000000000004, 910000000000000000000016, 910000000000000000000005);
+			children = (910000000000000000000003, 910000000000000000000004, 910000000000000000000005);
 			sourceTree = "<group>";
 		};
 		910000000000000000000003 /* src */ = {isa = PBXFileSystemSynchronizedRootGroup; path = src; sourceTree = "<group>";};
 		910000000000000000000004 /* ios */ = {isa = PBXFileSystemSynchronizedRootGroup; path = ios; sourceTree = "<group>";};
-		910000000000000000000016 /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; path = Resources; sourceTree = "<group>";};
 		910000000000000000000005 /* Products */ = {
 			isa = PBXGroup;
 			children = (910000000000000000000006);
@@ -42,7 +41,7 @@
 			buildPhases = (910000000000000000000008, 910000000000000000000009, 91000000000000000000000A);
 			buildRules = ();
 			dependencies = ();
-			fileSystemSynchronizedGroups = (910000000000000000000003, 910000000000000000000004, 910000000000000000000016);
+			fileSystemSynchronizedGroups = (910000000000000000000003, 910000000000000000000004);
 			name = "Nikon Pixel Merge iOS";
 			productName = "Nikon Pixel Merge";
 			productReference = 910000000000000000000006;
@@ -93,15 +92,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/src";
 				INFOPLIST_KEY_CFBundleDisplayName = "Nikon Pixel Merge";
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = local.camera-tools.NikonPixelMerge.ios;
 				PRODUCT_NAME = "Nikon Pixel Merge";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -114,15 +112,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/src";
 				INFOPLIST_KEY_CFBundleDisplayName = "Nikon Pixel Merge";
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = local.camera-tools.NikonPixelMerge.ios;
 				PRODUCT_NAME = "Nikon Pixel Merge";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
