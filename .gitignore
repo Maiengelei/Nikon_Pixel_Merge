@@ -2,6 +2,11 @@
 /ImageFile/
 /exports/
 /DerivedData/
+*.xcarchive/
+*.xcresult/
 xcuserdata/
 *.xcuserstate
 .DS_Store
+*.[nN][eE][fF]
+*.[nN][eE][fF][xX]
+__pycache__/
